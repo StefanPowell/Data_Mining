@@ -47,6 +47,7 @@ quake_array.pop()
 with open('earthquake_data.csv', mode='w') as earthquake_data:
     quake_writer = csv.writer(earthquake_data, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
     c = 0
+    quake_writer.writerow(["Date and Time", "Latitude", "Longitude", "Magnitude", "Depth"])
     for m in range(len(quake_array)):
         try:
             quake_writer.writerow([quake_array[0 + c], quake_array[1 + c], quake_array[2 + c], quake_array[3 + c], quake_array[4 + c]])
