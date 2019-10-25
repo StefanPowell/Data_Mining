@@ -1,5 +1,6 @@
 import urllib.request
 import re
+import csv
 
 keep_first_parse = []
 
@@ -43,4 +44,12 @@ quake_array.pop(0)
 quake_array.pop()
 quake_array.pop()
 
-print(quake_array)
+with open('earthquake_data.csv', mode='w') as earthquake_data:
+    quake_writer = csv.writer(earthquake_data, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+    c = 0
+    for m in range(len(quake_array)):
+        try:
+            quake_writer.writerow([quake_array[0 + c], quake_array[1 + c], quake_array[2 + c], quake_array[3 + c], quake_array[4 + c]])
+            c = c + 5
+        except:
+            print(" ")
