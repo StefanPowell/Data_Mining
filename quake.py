@@ -35,4 +35,12 @@ strip_data = clean_data(remove_array, first_partition);
 strip_data = re.sub('\n<td class=.*?</tr> ', '', strip_data, flags=re.DOTALL)
 
 #remove newlines
-print(strip_data)
+strip_data = strip_data.replace('\n\n', '\n')
+
+quake_array = strip_data.split("\n")
+quake_array.pop(0)
+quake_array.pop(0)
+quake_array.pop()
+quake_array.pop()
+
+print(quake_array)
