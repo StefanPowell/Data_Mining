@@ -45,30 +45,6 @@ quake_array.pop()
 quake_array.pop()
 
 c = 0
-for m in range(len(quake_array)):
-       try:
-           if len(quake_array[c+1]) > 10:
-               #remove only first one
-               quake_array.pop(c)
-           if len(quake_array[c + 2]) > 10:
-               # remove both first and second
-               quake_array.pop(c)
-               quake_array.pop(c+1)
-           if len(quake_array[c + 3]) > 10:
-               # remove first, second and third
-               quake_array.pop(c)
-               quake_array.pop(c+1)
-               quake_array.pop(c+2)
-           if len(quake_array[c + 4]) > 10:
-               #remove first, second, third and fourth
-               quake_array.pop(c)
-               quake_array.pop(c + 1)
-               quake_array.pop(c + 2)
-               quake_array.pop(c + 3)
-       except:
-           print("")
-
-c = 0
 with open('earthquake_data.csv', mode='w') as earthquake_data:
     quake_writer = csv.writer(earthquake_data, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
     quake_writer.writerow(["Date and Time", "Latitude", "Longitude", "Magnitude", "Depth"])
