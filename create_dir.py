@@ -5,7 +5,8 @@ import datetime
 now = datetime.datetime.now()
 username = getpass.getuser()
 days_in_each_month = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-directory_location = "C:/Users/"+username+"/Documents/dates"
+#directory_location = "C:/Users/"+username+"/Documents/dates"
+directory_location = "//home/"+username+"/Documents/dates"
 
 ##if Mac or Linux main directory may not be the same
 
